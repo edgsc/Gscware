@@ -1,187 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Políticas de Privacidade - Gscware Apps</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-                sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .container {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 600px;
-            width: 100%;
-            padding: 40px;
-            animation: slideIn 0.5s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .header h1 {
-            color: #333;
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .header p {
-            color: #666;
-            font-size: 14px;
-        }
-
-        .apps-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .app-card {
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 20px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .app-card:hover {
-            border-color: #667eea;
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
-            transform: translateX(5px);
-        }
-
-        .app-name {
-            font-size: 18px;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .app-icon {
-            font-size: 24px;
-        }
-
-        .app-description {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 12px;
-        }
-
-        .policy-link {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: transform 0.2s ease;
-        }
-
-        .policy-link:hover {
-            transform: scale(1.05);
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #e0e0e0;
-            color: #999;
-            font-size: 12px;
-        }
-
-        .footer a {
-            color: #667eea;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 30px 20px;
-            }
-
-            .header h1 {
-                font-size: 24px;
-            }
-
-            .app-card {
-                padding: 16px;
-            }
-        }
-    </style>
+    <title>Multilingual Language Selector</title>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>📱 Políticas de Privacidade</h1>
-            <p>Gscware Apps</p>
-        </div>
+    <h1>Welcome to the Multilingual Page</h1>
+    <label for="language">Select your language:</label>
+    <select id="language" onchange="changeLanguage()">
+        <option value="en" selected>English</option>
+        <option value="pt">Português</option>
+        <option value="es">Español</option>
+    </select>
 
-        <div class="apps-list">
-            <!-- Floating Calculator Popup -->
-            <div class="app-card">
-                <div class="app-name">
-                    <span class="app-icon">🧮</span>
-                    Floating Calculator Popup
-                </div>
-                <div class="app-description">
-                    Uma calculadora flutuante prática e rápida para suas operações matemáticas do dia a dia.
-                </div>
-                <a href="privacy_politics_calculator.html" class="policy-link">Ver Política de Privacidade</a>
-            </div>
-
-            <!-- Espaço para futuros apps -->
-            <div style="text-align: center; color: #999; font-size: 12px; margin-top: 20px; padding: 20px; border: 2px dashed #e0e0e0; border-radius: 8px;">
-                ✨ Mais apps em breve...
-            </div>
-        </div>
-
-        <div class="footer">
-            <p>© 2026 Gscware. Todos os direitos reservados.</p>
-            <p style="margin-top: 8px;">
-                <a href="https://github.com/edgsc/Gscware" target="_blank">GitHub</a>
-            </p>
-        </div>
-    </div>
+    <script>
+        function changeLanguage() {
+            const lang = document.getElementById('language').value;
+            // Implement language change logic here
+            console.log(`Language changed to: ${lang}`);
+        }
+    </script>
 </body>
 </html>
