@@ -4,36 +4,285 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Privacy Policies - Gscware</title>
+    <meta name="description" content="Gscware privacy portal with policies for all official applications.">
+    <title>Gscware - Privacy Policies</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #f4f6fa;
+            --surface: #ffffff;
+            --text: #1b2430;
+            --muted: #5a6473;
+            --accent: #2f6fed;
+            --accent-soft: #e8efff;
+            --border: #dbe2ef;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 0 0, #dce7ff 0%, transparent 40%),
+                radial-gradient(circle at 100% 0, #d5f4ef 0%, transparent 35%),
+                var(--bg);
+            min-height: 100vh;
+        }
+
+        .container {
+            width: min(920px, 92vw);
+            margin: 2.5rem auto;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 10px 35px rgba(22, 40, 74, 0.08);
+            overflow: hidden;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 1rem 1.25rem 0;
+        }
+
+        #language-selector {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.45rem 0.75rem;
+            font-size: 0.95rem;
+            color: var(--text);
+            background: #fff;
+            cursor: pointer;
+        }
+
+        .hero {
+            padding: 1rem 2rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero h1 {
+            font-size: clamp(1.5rem, 2vw + 1rem, 2.2rem);
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            color: var(--muted);
+            max-width: 70ch;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 0.85rem;
+            font-size: 0.85rem;
+            color: #1e4fb8;
+            background: var(--accent-soft);
+            border: 1px solid #c8d8ff;
+            padding: 0.3rem 0.65rem;
+            border-radius: 999px;
+        }
+
+        main {
+            padding: 1.5rem 2rem 2rem;
+        }
+
+        section + section {
+            margin-top: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.18rem;
+            margin-bottom: 0.65rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 0.6rem;
+        }
+
+        .section-text {
+            color: var(--muted);
+            max-width: 75ch;
+        }
+
+        .app-card {
+            margin-top: 1rem;
+            display: block;
+            text-decoration: none;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem 1rem 0.95rem;
+            background: linear-gradient(145deg, #ffffff, #f8fbff);
+            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+        }
+
+        .app-card:hover,
+        .app-card:focus-visible {
+            transform: translateY(-2px);
+            border-color: #b7cbff;
+            box-shadow: 0 8px 24px rgba(37, 83, 168, 0.16);
+            outline: none;
+        }
+
+        .app-title {
+            font-weight: 700;
+            color: #15326f;
+            margin-bottom: 0.2rem;
+        }
+
+        .app-description {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .app-link-label {
+            margin-top: 0.65rem;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.92rem;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            background: #fbfcff;
+            color: #6d7786;
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 1rem 1.25rem;
+        }
+
+        @media (max-width: 680px) {
+            .container {
+                margin: 1rem auto;
+                border-radius: 12px;
+            }
+
+            .hero,
+            main {
+                padding-left: 1.15rem;
+                padding-right: 1.15rem;
+            }
+
+            .top-bar {
+                padding-right: 1.15rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <select id="language-selector" onchange="changeLanguage()">
-            <option value="en" selected>English</option>
-            <option value="pt">Português</option>
-            <option value="es">Español</option>
-        </select>
-    </header>
-    <main>
-        <h1>Privacy Policies</h1>
-        <p>This page outlines our privacy policies...</p>
-        <!-- All other original content goes here, translated as necessary -->
-        <div id="apps-list">
-            <p>Our applications include:</p>
-            <ul>
-                <li>Floating Calculator Popup Card</li>
-                <!-- Additional apps -->
-            </ul>
-        </div>
-    </main>
-    <footer>
-        <p>©2026 Gscware. All rights reserved.</p>
-    </footer>
+    <div class="container">
+        <header>
+            <div class="top-bar">
+                <select id="language-selector" onchange="changeLanguage()" aria-label="Language selector">
+                    <option value="en" selected>English</option>
+                    <option value="pt">Português</option>
+                    <option value="es">Español</option>
+                </select>
+            </div>
+            <div class="hero">
+                <h1 data-i18n="title">Gscware Privacy Policies</h1>
+                <p data-i18n="subtitle">Access privacy information for all official Gscware applications in one place.</p>
+                <span class="badge" data-i18n="lastUpdated">Last updated: March 11, 2026</span>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <h2 data-i18n="overviewHeading">Overview</h2>
+                <p class="section-text" data-i18n="overviewText">This portal provides transparent and easy-to-read privacy policies for Gscware products. Each policy describes permissions, local storage behavior, and how user information is handled.</p>
+            </section>
+
+            <section>
+                <h2 data-i18n="appsHeading">Applications</h2>
+                <p class="section-text" data-i18n="appsText">Select an application below to open its complete privacy policy.</p>
+
+                <a class="app-card" href="privacy_politics_calculator.html" aria-label="Open Calculator Popup privacy policy">
+                    <p class="app-title" data-i18n="calculatorTitle">Floating Calculator Popup Card</p>
+                    <p class="app-description" data-i18n="calculatorDescription">Floating calculator for Android with overlay functionality and quick access tools.</p>
+                    <p class="app-link-label" data-i18n="openPolicy">Open privacy policy</p>
+                </a>
+            </section>
+        </main>
+
+        <footer>
+            <p data-i18n="footer">©2026 Gscware. All rights reserved.</p>
+        </footer>
+    </div>
+
     <script>
-        function changeLanguage() {
-            // JavaScript code to switch languages
+        const translations = {
+            en: {
+                pageTitle: "Gscware - Privacy Policies",
+                title: "Gscware Privacy Policies",
+                subtitle: "Access privacy information for all official Gscware applications in one place.",
+                lastUpdated: "Last updated: March 11, 2026",
+                overviewHeading: "Overview",
+                overviewText: "This portal provides transparent and easy-to-read privacy policies for Gscware products. Each policy describes permissions, local storage behavior, and how user information is handled.",
+                appsHeading: "Applications",
+                appsText: "Select an application below to open its complete privacy policy.",
+                calculatorTitle: "Floating Calculator Popup Card",
+                calculatorDescription: "Floating calculator for Android with overlay functionality and quick access tools.",
+                openPolicy: "Open privacy policy",
+                footer: "©2026 Gscware. All rights reserved."
+            },
+            pt: {
+                pageTitle: "Gscware - Politicas de Privacidade",
+                title: "Politicas de Privacidade da Gscware",
+                subtitle: "Acesse em um unico lugar as informacoes de privacidade dos aplicativos oficiais da Gscware.",
+                lastUpdated: "Ultima atualizacao: 11 de marco de 2026",
+                overviewHeading: "Visao geral",
+                overviewText: "Este portal oferece politicas de privacidade transparentes e faceis de ler para os produtos da Gscware. Cada politica descreve permissoes, armazenamento local e como as informacoes dos usuarios sao tratadas.",
+                appsHeading: "Aplicativos",
+                appsText: "Selecione um aplicativo abaixo para abrir sua politica de privacidade completa.",
+                calculatorTitle: "Calculadora Flutuante Popup Card",
+                calculatorDescription: "Calculadora flutuante para Android com funcionalidade de sobreposicao e acesso rapido.",
+                openPolicy: "Abrir politica de privacidade",
+                footer: "©2026 Gscware. Todos os direitos reservados."
+            },
+            es: {
+                pageTitle: "Gscware - Politicas de Privacidad",
+                title: "Politicas de Privacidad de Gscware",
+                subtitle: "Accede en un solo lugar a la informacion de privacidad de todas las aplicaciones oficiales de Gscware.",
+                lastUpdated: "Ultima actualizacion: 11 de marzo de 2026",
+                overviewHeading: "Resumen",
+                overviewText: "Este portal ofrece politicas de privacidad claras y faciles de leer para los productos de Gscware. Cada politica describe permisos, almacenamiento local y como se maneja la informacion del usuario.",
+                appsHeading: "Aplicaciones",
+                appsText: "Selecciona una aplicacion para abrir su politica de privacidad completa.",
+                calculatorTitle: "Calculadora Flotante Popup Card",
+                calculatorDescription: "Calculadora flotante para Android con funcionalidad de superposicion y acceso rapido.",
+                openPolicy: "Abrir politica de privacidad",
+                footer: "©2026 Gscware. Todos los derechos reservados."
+            }
+        };
+
+        function applyLanguage(language) {
+            const selected = translations[language] || translations.en;
+            document.title = selected.pageTitle;
+            document.documentElement.lang = language;
+
+            document.querySelectorAll("[data-i18n]").forEach((node) => {
+                const key = node.getAttribute("data-i18n");
+                if (selected[key]) {
+                    node.textContent = selected[key];
+                }
+            });
         }
+
+        function changeLanguage() {
+            const selector = document.getElementById("language-selector");
+            applyLanguage(selector.value);
+        }
+
+        window.addEventListener("DOMContentLoaded", () => {
+            const selector = document.getElementById("language-selector");
+            const browserLanguage = (navigator.language || "en").slice(0, 2).toLowerCase();
+            const initialLanguage = ["en", "pt", "es"].includes(browserLanguage) ? browserLanguage : "en";
+            selector.value = initialLanguage;
+            applyLanguage(initialLanguage);
+        });
     </script>
 </body>
 </html>
