@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy – Calculator Popup</title>
+  <title>Privacy Policy - Calculator Popup</title>
   <style>
-    /* ── Reset & base ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
@@ -17,54 +16,61 @@
       background: #f9f9fb;
     }
 
-    /* ── Layout ── */
     .container {
-      max-width: 780px;
+      max-width: 840px;
       margin: 0 auto;
       padding: 2.5rem 1.25rem 4rem;
     }
 
-    /* ── Header ── */
+    .top-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 0.75rem;
+    }
+
+    #language-selector {
+      border: 1px solid #d5dbe5;
+      border-radius: 8px;
+      padding: 0.45rem 0.7rem;
+      font-size: 0.94rem;
+      background: #fff;
+      color: #1a1a1a;
+      cursor: pointer;
+    }
+
     header {
       border-bottom: 3px solid #4285f4;
       padding-bottom: 1rem;
       margin-bottom: 2rem;
     }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 0.85rem;
+      color: #2c6ad9;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible {
+      text-decoration: underline;
+      outline: none;
+    }
+
     header h1 {
       font-size: 1.75rem;
       font-weight: 700;
       color: #1a1a1a;
     }
-    header p.subtitle {
-      font-size: 0.875rem;
+
+    header .subtitle {
+      font-size: 0.9rem;
       color: #555;
       margin-top: 0.35rem;
     }
 
-    /* ── Sections ── */
-    section {
-      margin-bottom: 2rem;
-    }
-    section h2 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #1a1a1a;
-      border-left: 4px solid #4285f4;
-      padding-left: 0.65rem;
-      margin-bottom: 0.75rem;
-    }
-    section p,
-    section li {
-      color: #333;
-      margin-bottom: 0.5rem;
-    }
-    section ul,
-    section ol {
-      padding-left: 1.4rem;
-      margin-top: 0.35rem;
-    }
-
-    /* ── Notice box ── */
     .notice {
       background: #e8f5e9;
       border-left: 5px solid #43a047;
@@ -74,486 +80,320 @@
       font-size: 0.95rem;
       color: #1b5e20;
     }
-    .notice strong { font-weight: 700; }
 
-    /* ── Table ── */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.9rem;
-      margin-top: 0.5rem;
+    section {
+      margin-bottom: 1.75rem;
     }
-    th, td {
-      text-align: left;
-      padding: 0.6rem 0.75rem;
-      border: 1px solid #ddd;
-    }
-    th {
-      background: #f1f3f5;
-      font-weight: 600;
-    }
-    tr:nth-child(even) td { background: #fafafa; }
 
-    /* ── Footer ── */
+    section h2 {
+      font-size: 1.13rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      border-left: 4px solid #4285f4;
+      padding-left: 0.65rem;
+      margin-bottom: 0.75rem;
+    }
+
+    section p,
+    section li {
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    section ul {
+      padding-left: 1.4rem;
+      margin-top: 0.35rem;
+    }
+
     footer {
       border-top: 1px solid #ddd;
       padding-top: 1.25rem;
-      font-size: 0.8rem;
-      color: #888;
+      margin-top: 0.5rem;
+      font-size: 0.82rem;
+      color: #7a7a7a;
       text-align: center;
     }
 
-    /* ── Responsive ── */
     @media (max-width: 600px) {
-      header h1 { font-size: 1.4rem; }
-      table { font-size: 0.8rem; }
-      th, td { padding: 0.45rem 0.5rem; }
+      .container { padding-top: 1.5rem; }
+      header h1 { font-size: 1.42rem; }
     }
   </style>
 </head>
 <body>
-<div class="container">
+  <div class="container">
+    <div class="top-bar">
+      <select id="language-selector" onchange="changeLanguage()" aria-label="Language selector">
+        <option value="en" selected>English</option>
+        <option value="pt">Português</option>
+        <option value="es">Español</option>
+      </select>
+    </div>
 
-  <header>
-    <h1>Privacy Policy</h1>
-    <p class="subtitle">
-      Application: <strong>Calculator Popup</strong> &nbsp;|&nbsp;
-      Developer / Publisher: <strong>GSCWare</strong><br />
-      Last updated: <strong>March 10, 2026</strong>
-    </p>
-  </header>
+    <header>
+      <a class="back-link" href="index.html" data-i18n="backToPortal" aria-label="Back to portal">&larr; Back to portal</a>
+      <h1 data-i18n="title">Privacy Policy</h1>
+      <p class="subtitle">
+        <span data-i18n="applicationLabel">Application:</span> <strong data-i18n="applicationName">Calculator Popup</strong>
+        &nbsp;|&nbsp;
+        <span data-i18n="publisherLabel">Developer / Publisher:</span> <strong>GSCWare</strong><br />
+        <span data-i18n="lastUpdatedLabel">Last updated:</span> <strong data-i18n="lastUpdatedValue">March 11, 2026</strong>
+      </p>
+    </header>
 
-  <!-- ── No Personal-Data Collection Notice ── -->
-  <div class="notice">
-    <strong>No Personal Data Collected by This Application.</strong><br />
-    Calculator Popup does not collect, store, transmit, or share any personally
-    identifiable information (PII) directly. All data stored by the application
-    remains exclusively on your device and is never sent to our servers.
+    <div class="notice" data-i18n-html="notice"></div>
+    <main id="policy-content"></main>
+
+    <footer>
+      <p data-i18n-html="footer"></p>
+    </footer>
   </div>
 
-  <!-- 1. Introduction -->
-  <section id="introduction">
-    <h2>1. Introduction</h2>
-    <p>
-      This Privacy Policy describes how GSCWare ("<strong>we</strong>,"
-      "<strong>our</strong>," or "<strong>us</strong>") handles information in
-      connection with your use of <strong>Calculator Popup</strong>
-      (the "<strong>Application</strong>"), a floating popup calculator for Android.
-    </p>
-    <p>
-      By installing or using the Application, you acknowledge that you have read
-      and understood this Privacy Policy. If you do not agree with these terms,
-      please uninstall the Application.
-    </p>
-  </section>
+  <script>
+    const translations = {
+      en: {
+        pageTitle: "Privacy Policy - Calculator Popup",
+        backToPortal: "← Back to portal",
+        title: "Privacy Policy",
+        applicationLabel: "Application:",
+        applicationName: "Calculator Popup",
+        publisherLabel: "Developer / Publisher:",
+        lastUpdatedLabel: "Last updated:",
+        lastUpdatedValue: "March 11, 2026",
+        notice: "<strong>No personal data is collected directly by this application.</strong><br>Calculator Popup does not collect, store, or transmit personally identifiable information. Preferences stay on your own device.",
+        footer: "&copy; GSCWare. All rights reserved.<br>This policy is prepared to support transparency and compliance with applicable privacy regulations.",
+        sections: `
+          <section>
+            <h2>1. Introduction</h2>
+            <p>This policy explains how GSCWare handles information when you use Calculator Popup for Android.</p>
+            <p>By installing or using the app, you acknowledge this policy.</p>
+          </section>
+          <section>
+            <h2>2. Data We Do Not Collect</h2>
+            <p>We do not directly collect names, email addresses, contacts, precise location, payment card details, or biometric data.</p>
+            <p>Calculator inputs are processed locally and are not transmitted to our servers.</p>
+          </section>
+          <section>
+            <h2>3. Local Device Storage</h2>
+            <p>The app stores non-personal preferences on your device using SharedPreferences, such as theme, language, launch counters, and ad timing controls.</p>
+            <p>This information remains on your device unless you clear app data or uninstall the app.</p>
+          </section>
+          <section>
+            <h2>4. Android Permissions</h2>
+            <ul>
+              <li><strong>SYSTEM_ALERT_WINDOW</strong>: enables the floating calculator overlay.</li>
+              <li><strong>FOREGROUND_SERVICE</strong> and <strong>FOREGROUND_SERVICE_SPECIAL_USE</strong>: keep the floating service active.</li>
+              <li><strong>INTERNET</strong> and <strong>ACCESS_NETWORK_STATE</strong>: required for ad and billing SDK connectivity.</li>
+              <li><strong>VIBRATE</strong>: optional haptic feedback for key presses.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>5. Third-Party Services</h2>
+            <p>The app may use Google AdMob, Google Play Billing, and Firebase Crashlytics. These services have their own privacy policies and may process data under their own terms.</p>
+            <ul>
+              <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+              <li><a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">Google Play Terms</a></li>
+              <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy</a></li>
+            </ul>
+          </section>
+          <section>
+            <h2>6. Data Retention</h2>
+            <p>Local app preferences remain on your device until you remove them. We do not maintain user accounts or backend profiles for this app.</p>
+          </section>
+          <section>
+            <h2>7. Children's Privacy</h2>
+            <p>The app is not directed to children under 13 (or the minimum age in your jurisdiction). We do not knowingly collect personal data from children.</p>
+          </section>
+          <section>
+            <h2>8. User Rights (LGPD / GDPR)</h2>
+            <p>Depending on your region, you may have rights of access, correction, deletion, restriction, and objection for data handled by third-party providers.</p>
+            <p>For local app data, you can clear app data in Android settings or uninstall the app.</p>
+          </section>
+          <section>
+            <h2>9. Security</h2>
+            <p>We apply reasonable safeguards. Local preferences use Android private storage, and network communications from integrated SDKs use secure transport.</p>
+          </section>
+          <section>
+            <h2>10. Policy Updates and Contact</h2>
+            <p>We may update this policy over time. The date at the top indicates the latest revision.</p>
+            <p>Contact: <a href="mailto:gscware@gmail.com">gscware@gmail.com</a>.</p>
+          </section>
+        `
+      },
+      pt: {
+        pageTitle: "Política de Privacidade - Calculator Popup",
+        backToPortal: "← Voltar ao portal",
+        title: "Política de Privacidade",
+        applicationLabel: "Aplicativo:",
+        applicationName: "Calculator Popup",
+        publisherLabel: "Desenvolvedor / Publicador:",
+        lastUpdatedLabel: "Última atualização:",
+        lastUpdatedValue: "11 de março de 2026",
+        notice: "<strong>Nenhum dado pessoal é coletado diretamente por este aplicativo.</strong><br>O Calculator Popup não coleta, armazena nem transmite informações de identificação pessoal. As preferências permanecem apenas no seu dispositivo.",
+        footer: "&copy; GSCWare. Todos os direitos reservados.<br>Esta política foi preparada para promover transparência e conformidade com as normas de privacidade aplicáveis.",
+        sections: `
+          <section>
+            <h2>1. Introdução</h2>
+            <p>Esta política explica como a GSCWare trata informações quando você utiliza o Calculator Popup no Android.</p>
+            <p>Ao instalar ou usar o aplicativo, você declara que leu e compreendeu este documento.</p>
+          </section>
+          <section>
+            <h2>2. Dados que não coletamos</h2>
+            <p>Não coletamos diretamente nome, e-mail, contatos, localização precisa, dados de cartão de pagamento ou dados biométricos.</p>
+            <p>Os cálculos e resultados são processados localmente e não são enviados aos nossos servidores.</p>
+          </section>
+          <section>
+            <h2>3. Armazenamento local no dispositivo</h2>
+            <p>O aplicativo salva preferências não pessoais no seu dispositivo por meio do SharedPreferences, como tema, idioma, contadores de abertura e controle de exibição de anúncios.</p>
+            <p>Essas informações permanecem no aparelho até que você limpe os dados do app ou desinstale o aplicativo.</p>
+          </section>
+          <section>
+            <h2>4. Permissões do Android</h2>
+            <ul>
+              <li><strong>SYSTEM_ALERT_WINDOW</strong>: habilita a calculadora flutuante sobre outros apps.</li>
+              <li><strong>FOREGROUND_SERVICE</strong> e <strong>FOREGROUND_SERVICE_SPECIAL_USE</strong>: mantêm o serviço ativo em primeiro plano.</li>
+              <li><strong>INTERNET</strong> e <strong>ACCESS_NETWORK_STATE</strong>: necessários para SDKs de anúncios e faturamento.</li>
+              <li><strong>VIBRATE</strong>: fornece resposta tátil opcional ao pressionar teclas.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>5. Serviços de terceiros</h2>
+            <p>O app pode utilizar Google AdMob, Google Play Billing e Firebase Crashlytics. Esses serviços possuem políticas próprias e podem tratar dados de acordo com seus termos.</p>
+            <ul>
+              <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade do Google</a></li>
+              <li><a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">Termos do Google Play</a></li>
+              <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Privacidade do Firebase</a></li>
+            </ul>
+          </section>
+          <section>
+            <h2>6. Retenção de dados</h2>
+            <p>As preferências locais do aplicativo ficam no seu dispositivo até serem removidas. Não mantemos contas de usuário nem perfis em servidor para este app.</p>
+          </section>
+          <section>
+            <h2>7. Privacidade de crianças</h2>
+            <p>O aplicativo não é direcionado a crianças menores de 13 anos (ou da idade mínima aplicável em sua jurisdição). Não coletamos, de forma consciente, dados pessoais de crianças.</p>
+          </section>
+          <section>
+            <h2>8. Seus direitos (LGPD / GDPR)</h2>
+            <p>Conforme a sua região, você pode ter direitos de acesso, correção, exclusão, restrição e oposição em relação a dados tratados por provedores terceiros.</p>
+            <p>Para dados locais do aplicativo, você pode limpar os dados nas configurações do Android ou desinstalar o app.</p>
+          </section>
+          <section>
+            <h2>9. Segurança</h2>
+            <p>Adotamos salvaguardas razoáveis. As preferências locais utilizam armazenamento privado do Android, e as comunicações de rede dos SDKs integrados usam transporte seguro.</p>
+          </section>
+          <section>
+            <h2>10. Atualizações da política e contato</h2>
+            <p>Podemos atualizar esta política periodicamente. A data no topo desta página indica a revisão mais recente.</p>
+            <p>Contato: <a href="mailto:gscware@gmail.com">gscware@gmail.com</a>.</p>
+          </section>
+        `
+      },
+      es: {
+        pageTitle: "Política de Privacidad - Calculator Popup",
+        backToPortal: "← Volver al portal",
+        title: "Política de Privacidad",
+        applicationLabel: "Aplicación:",
+        applicationName: "Calculator Popup",
+        publisherLabel: "Desarrollador / Publicador:",
+        lastUpdatedLabel: "Última actualización:",
+        lastUpdatedValue: "11 de marzo de 2026",
+        notice: "<strong>Esta aplicación no recopila datos personales de forma directa.</strong><br>Calculator Popup no recopila, almacena ni transmite información personal identificable. Las preferencias permanecen únicamente en tu dispositivo.",
+        footer: "&copy; GSCWare. Todos los derechos reservados.<br>Esta política fue redactada para promover transparencia y cumplimiento con las normas de privacidad aplicables.",
+        sections: `
+          <section>
+            <h2>1. Introducción</h2>
+            <p>Esta política explica cómo GSCWare maneja la información cuando utilizas Calculator Popup en Android.</p>
+            <p>Al instalar o usar la aplicación, aceptas las condiciones descritas en este documento.</p>
+          </section>
+          <section>
+            <h2>2. Datos que no recopilamos</h2>
+            <p>No recopilamos directamente nombre, correo electrónico, contactos, ubicación precisa, datos de tarjeta de pago ni datos biométricos.</p>
+            <p>Los cálculos y resultados se procesan de forma local y no se envían a nuestros servidores.</p>
+          </section>
+          <section>
+            <h2>3. Almacenamiento local en el dispositivo</h2>
+            <p>La aplicación guarda preferencias no personales en tu dispositivo mediante SharedPreferences, como tema, idioma, contador de aperturas y control de anuncios.</p>
+            <p>Esta información permanece en el dispositivo hasta que borres los datos de la app o la desinstales.</p>
+          </section>
+          <section>
+            <h2>4. Permisos de Android</h2>
+            <ul>
+              <li><strong>SYSTEM_ALERT_WINDOW</strong>: permite la calculadora flotante sobre otras apps.</li>
+              <li><strong>FOREGROUND_SERVICE</strong> y <strong>FOREGROUND_SERVICE_SPECIAL_USE</strong>: mantienen activo el servicio flotante.</li>
+              <li><strong>INTERNET</strong> y <strong>ACCESS_NETWORK_STATE</strong>: necesarios para SDK de anuncios y facturación.</li>
+              <li><strong>VIBRATE</strong>: respuesta háptica opcional al pulsar teclas.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>5. Servicios de terceros</h2>
+            <p>La app puede utilizar Google AdMob, Google Play Billing y Firebase Crashlytics. Estos servicios tienen políticas propias y pueden tratar datos según sus términos.</p>
+            <ul>
+              <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidad de Google</a></li>
+              <li><a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">Términos de Google Play</a></li>
+              <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Privacidad de Firebase</a></li>
+            </ul>
+          </section>
+          <section>
+            <h2>6. Retención de datos</h2>
+            <p>Las preferencias locales permanecen en tu dispositivo hasta que las elimines. No mantenemos cuentas de usuario ni perfiles en servidor para esta app.</p>
+          </section>
+          <section>
+            <h2>7. Privacidad infantil</h2>
+            <p>La app no está dirigida a menores de 13 años (o la edad mínima aplicable en tu jurisdicción). No recopilamos conscientemente datos personales de menores.</p>
+          </section>
+          <section>
+            <h2>8. Tus derechos (LGPD / GDPR)</h2>
+            <p>Dependiendo de tu región, puedes tener derechos de acceso, corrección, eliminación, restricción y oposición sobre datos tratados por proveedores externos.</p>
+            <p>Para los datos locales de la app, puedes borrar los datos en la configuración de Android o desinstalar la aplicación.</p>
+          </section>
+          <section>
+            <h2>9. Seguridad</h2>
+            <p>Aplicamos medidas razonables de protección. Las preferencias locales usan almacenamiento privado de Android, y las comunicaciones de red de los SDK integrados utilizan transporte seguro.</p>
+          </section>
+          <section>
+            <h2>10. Actualizaciones de la política y contacto</h2>
+            <p>Podemos actualizar esta política con el tiempo. La fecha mostrada arriba indica la revisión más reciente.</p>
+            <p>Contacto: <a href="mailto:gscware@gmail.com">gscware@gmail.com</a>.</p>
+          </section>
+        `
+      }
+    };
 
-  <!-- 2. Information We Do NOT Collect -->
-  <section id="no-collection">
-    <h2>2. Information We Do Not Collect</h2>
-    <p>
-      The Application does <strong>not</strong> collect, process, or transmit any
-      of the following types of data:
-    </p>
-    <ul>
-      <li>Name, email address, or other contact details</li>
-      <li>Location data (precise or approximate)</li>
-      <li>Camera, microphone, or media access</li>
-      <li>Contacts, calendar, or call logs</li>
-      <li>Biometric data</li>
-      <li>Financial or payment card information</li>
-      <li>Device identifiers (such as IMEI) by our own code</li>
-    </ul>
-    <p>
-      Calculator inputs and results exist solely in device memory during the
-      current session and are never persisted or transmitted.
-    </p>
-  </section>
+    function applyLanguage(language) {
+      const selected = translations[language] || translations.en;
+      document.documentElement.lang = language;
+      document.title = selected.pageTitle;
 
-  <!-- 3. Data Stored Locally on Your Device -->
-  <section id="local-storage">
-    <h2>3. Data Stored Locally on Your Device</h2>
-    <p>
-      The Application uses Android
-      <a href="https://developer.android.com/reference/android/content/SharedPreferences"
-         target="_blank" rel="noopener">SharedPreferences</a>
-      to store the following <strong>non-personal</strong> preferences
-      under the key space <code>calculator_prefs</code>. This data stays on your
-      device and is never transmitted externally by our code.
-    </p>
-    <table>
-      <thead>
-        <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Purpose</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>theme_override</code></td>
-          <td>Integer</td>
-          <td>Remembers the user's chosen color-scheme mode (system / light / dark).</td>
-        </tr>
-        <tr>
-          <td><code>theme_choice</code></td>
-          <td>Integer</td>
-          <td>Remembers the selected UI theme style (Default, Minimalist, Material, Flat).</td>
-        </tr>
-        <tr>
-          <td><code>language</code></td>
-          <td>String</td>
-          <td>Stores the user's preferred display language locale tag.</td>
-        </tr>
-        <tr>
-          <td><code>last_ad_time</code></td>
-          <td>Long (timestamp)</td>
-          <td>
-            Records the device timestamp of the last interstitial ad display, used
-            purely to enforce a minimum 3-hour interval between ads. No user identity
-            is associated with this value.
-          </td>
-        </tr>
-        <tr>
-          <td><code>launch_count</code></td>
-          <td>Integer</td>
-          <td>
-            Counts app launches since the last ad was shown, used to decide when to
-            display the next ad. Resets to zero after each ad impression.
-          </td>
-        </tr>
-        <tr>
-          <td><code>is_pro</code></td>
-          <td>Boolean</td>
-          <td>
-            Caches whether the user has purchased the "Remove Ads" in-app product,
-            so that ad-free status persists across app restarts without querying
-            Google Play Billing on every launch.
-          </td>
-        </tr>
-        <tr>
-          <td><code>debug_override</code></td>
-          <td>Boolean</td>
-          <td>
-            Developer-only flag for toggling debug mode at runtime. Has no effect
-            in production builds distributed through the Google Play Store.
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+      document.querySelectorAll("[data-i18n]").forEach((node) => {
+        const key = node.getAttribute("data-i18n");
+        if (selected[key]) {
+          node.textContent = selected[key];
+        }
+      });
 
-  <!-- 4. Android Permissions -->
-  <section id="permissions">
-    <h2>4. Android Permissions</h2>
-    <p>
-      The Application declares the following permissions in its
-      <code>AndroidManifest.xml</code>. Each permission is required solely for the
-      stated functional purpose and is not used to collect personal data.
-    </p>
-    <table>
-      <thead>
-        <tr>
-          <th>Permission</th>
-          <th>Functional Justification</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>SYSTEM_ALERT_WINDOW</code></td>
-          <td>
-            Draws the floating calculator overlay on top of other applications.
-            This is the core feature of the Application and cannot function without
-            this permission. The user is explicitly prompted to grant it via the
-            Android Settings screen.
-          </td>
-        </tr>
-        <tr>
-          <td><code>FOREGROUND_SERVICE</code></td>
-          <td>
-            Keeps the floating calculator alive while the user is interacting with
-            other apps. Android requires foreground-service permission to run a
-            persistent, visible service.
-          </td>
-        </tr>
-        <tr>
-          <td><code>FOREGROUND_SERVICE_SPECIAL_USE</code></td>
-          <td>
-            Required by Android 14+ (API 34) for foreground services that do not
-            fit a predefined category. Declared because the popup-calculator use
-            case is classified as <em>specialUse</em> by the Android platform.
-          </td>
-        </tr>
-        <tr>
-          <td><code>INTERNET</code></td>
-          <td>
-            Enables the Google AdMob SDK to fetch and display advertisements
-            (banner and interstitial) and enables the Google Play Billing library
-            to verify in-app purchase transactions with Google's servers.
-            The Application itself does not open any other network connections.
-          </td>
-        </tr>
-        <tr>
-          <td><code>ACCESS_NETWORK_STATE</code></td>
-          <td>
-            Allows the Google AdMob SDK to check network availability before
-            attempting to load ads, preventing unnecessary network errors.
-          </td>
-        </tr>
-        <tr>
-          <td><code>VIBRATE</code></td>
-          <td>
-            Provides haptic feedback (short vibrations) when the user interacts
-            with the calculator buttons for a more tactile user experience.
-            No data is collected or transmitted.
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+      document.querySelectorAll("[data-i18n-html]").forEach((node) => {
+        const key = node.getAttribute("data-i18n-html");
+        if (selected[key]) {
+          node.innerHTML = selected[key];
+        }
+      });
 
-  <!-- 5. Third-Party Services -->
-  <section id="third-party">
-    <h2>5. Third-Party Services</h2>
-    <p>
-      The Application integrates the following third-party SDKs. Each third party
-      operates under its own privacy policy, which governs data collected by that
-      SDK independently of our Application.
-    </p>
+      document.getElementById("policy-content").innerHTML = selected.sections;
+    }
 
-    <h3 style="margin: 1rem 0 0.4rem; font-size:1rem;">5.1 Google AdMob</h3>
-    <p>
-      AdMob (provided by Google LLC) is used to display in-app advertisements
-      (banner and interstitial formats) to users who have not purchased the
-      ad-removal option. AdMob may collect device advertising identifiers,
-      IP address, and usage data to serve relevant ads and measure ad
-      performance, in accordance with Google's policies.
-    </p>
-    <ul>
-      <li>
-        AdMob Privacy Policy:
-        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">
-          https://policies.google.com/privacy
-        </a>
-      </li>
-      <li>
-        How Google uses data from apps that use Google services:
-        <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">
-          https://policies.google.com/technologies/partner-sites
-        </a>
-      </li>
-    </ul>
-    <p>
-      Users who purchase the "Remove Ads" in-app product will no longer be
-      served ads, and the AdMob SDK will not be invoked for ad loading.
-    </p>
+    function changeLanguage() {
+      const selector = document.getElementById("language-selector");
+      applyLanguage(selector.value);
+    }
 
-    <h3 style="margin: 1rem 0 0.4rem; font-size:1rem;">5.2 Google Play Billing</h3>
-    <p>
-      The Google Play Billing library facilitates the optional "Remove Ads"
-      in-app purchase. All payment processing is handled entirely by Google
-      Play. We receive only a confirmation of whether the purchase was
-      successfully completed; we do not receive or store any payment card
-      details or billing address information.
-    </p>
-    <ul>
-      <li>
-        Google Play Terms of Service:
-        <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">
-          https://play.google.com/about/play-terms/
-        </a>
-      </li>
-    </ul>
-
-    <h3 style="margin: 1rem 0 0.4rem; font-size:1rem;">5.3 Firebase Crashlytics</h3>
-    <p>
-      Firebase Crashlytics (provided by Google LLC) is used to automatically
-      detect and report application crashes and errors. Crashlytics may collect
-      device state information (device model, OS version, stack traces) at the
-      moment of a crash to help us improve stability. No personally identifiable
-      information is intentionally included in crash reports.
-    </p>
-    <ul>
-      <li>
-        Firebase Privacy Information:
-        <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">
-          https://firebase.google.com/support/privacy
-        </a>
-      </li>
-    </ul>
-  </section>
-
-  <!-- 6. Data Retention -->
-  <section id="data-retention">
-    <h2>6. Data Retention</h2>
-    <p>
-      <strong>Application data (local):</strong> All preferences stored in
-      SharedPreferences are retained on your device until you clear the app's
-      data, uninstall the Application, or perform a factory reset. We have no
-      access to this data and cannot retrieve or delete it on your behalf.
-    </p>
-    <p>
-      <strong>Third-party data:</strong> Data collected by Google AdMob,
-      Google Play Billing, and Firebase Crashlytics is subject to the
-      respective data-retention policies of Google LLC. You may review and
-      manage this data through your Google account settings or by contacting
-      Google directly.
-    </p>
-    <p>
-      <strong>Our servers:</strong> We do not operate any backend server that
-      retains user data. There are no accounts, registrations, or user profiles
-      associated with this Application.
-    </p>
-  </section>
-
-  <!-- 7. Children's Privacy -->
-  <section id="childrens-privacy">
-    <h2>7. Children's Privacy</h2>
-    <p>
-      The Application is not directed to children under the age of 13 (or the
-      applicable minimum age in your jurisdiction). We do not knowingly collect
-      personal information from children. If you believe a child has provided
-      personal information through a third-party service integrated in this
-      Application, please contact that service provider directly using the links
-      in Section 5.
-    </p>
-  </section>
-
-  <!-- 8. User Rights -->
-  <section id="user-rights">
-    <h2>8. Your Rights (LGPD / GDPR)</h2>
-    <p>
-      Depending on your country of residence, you may have the following rights
-      with respect to personal data processed by third-party SDKs integrated in
-      this Application:
-    </p>
-    <ul>
-      <li>
-        <strong>Right of access</strong> – Request a copy of the personal data
-        held about you.
-      </li>
-      <li>
-        <strong>Right to rectification</strong> – Request correction of
-        inaccurate personal data.
-      </li>
-      <li>
-        <strong>Right to erasure ("right to be forgotten")</strong> – Request
-        deletion of your personal data.
-      </li>
-      <li>
-        <strong>Right to restriction</strong> – Request that processing of your
-        personal data be restricted.
-      </li>
-      <li>
-        <strong>Right to data portability</strong> – Receive your data in a
-        structured, machine-readable format.
-      </li>
-      <li>
-        <strong>Right to object</strong> – Object to the processing of your
-        personal data for direct marketing or other legitimate purposes.
-      </li>
-      <li>
-        <strong>Right to withdraw consent</strong> – Where processing is based
-        on consent, withdraw that consent at any time without affecting the
-        lawfulness of prior processing.
-      </li>
-    </ul>
-    <p>
-      Because we do not collect or control personal data directly, most of these
-      rights must be exercised with the relevant third-party provider
-      (Google LLC). For data processed by our Application (local preferences),
-      you can exercise all rights by clearing the Application's data in your
-      Android device settings or by uninstalling the Application.
-    </p>
-    <p>
-      For any privacy-related inquiries, please contact us at:
-      <a href="mailto:gscware@gmail.com">gscware@gmail.com</a>.
-    </p>
-    <p>
-      <strong>Brazil (LGPD):</strong> Users in Brazil may also file a complaint
-      with the Autoridade Nacional de Proteção de Dados (ANPD) at
-      <a href="https://www.gov.br/anpd" target="_blank" rel="noopener">
-        www.gov.br/anpd
-      </a>.
-    </p>
-    <p>
-      <strong>European Union / EEA (GDPR):</strong> Users in the EU/EEA may
-      lodge a complaint with their local supervisory authority.
-    </p>
-  </section>
-
-  <!-- 9. Security -->
-  <section id="security">
-    <h2>9. Security</h2>
-    <p>
-      We take reasonable measures to protect the information processed by the
-      Application:
-    </p>
-    <ul>
-      <li>
-        Local preferences are stored using the Android
-        <code>SharedPreferences</code> API with
-        <code>MODE_PRIVATE</code>, making them accessible only to this
-        Application on a non-rooted device.
-      </li>
-      <li>
-        The Application does not transmit any locally stored data over the
-        network.
-      </li>
-      <li>
-        The Application uses HTTPS for all network communication facilitated
-        by integrated SDKs (AdMob, Google Play Billing, Firebase Crashlytics).
-      </li>
-      <li>
-        Crash report data (via Firebase Crashlytics) is transmitted over
-        encrypted channels to Google's infrastructure.
-      </li>
-    </ul>
-    <p>
-      No method of electronic storage or transmission is 100% secure.
-      While we strive to use commercially acceptable means to protect your
-      information, we cannot guarantee absolute security of data processed
-      by third-party SDKs.
-    </p>
-  </section>
-
-  <!-- 10. Changes to This Policy -->
-  <section id="changes">
-    <h2>10. Changes to This Privacy Policy</h2>
-    <p>
-      We may update this Privacy Policy from time to time. Any changes will be
-      reflected by updating the "Last updated" date at the top of this page.
-      We encourage you to review this policy periodically. Continued use of the
-      Application after changes are posted constitutes your acceptance of the
-      updated policy.
-    </p>
-  </section>
-
-  <!-- 11. Contact -->
-  <section id="contact">
-    <h2>11. Contact Us</h2>
-    <p>
-      If you have any questions or concerns about this Privacy Policy, please
-      contact us:
-    </p>
-    <ul>
-      <li><strong>Entity:</strong> GSCWare</li>
-      <li>
-        <strong>Email:</strong>
-        <a href="mailto:gscware@gmail.com">gscware@gmail.com</a>
-      </li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>
-      &copy; GSCWare. All rights reserved.<br />
-      This Privacy Policy was prepared for compliance with the
-      Google Play Store policies, the Brazilian LGPD (Lei Geral de Proteção de Dados
-      Pessoais, Law No. 13,709/2018), and the European GDPR
-      (General Data Protection Regulation, EU 2016/679).
-    </p>
-  </footer>
-
-</div>
+    window.addEventListener("DOMContentLoaded", () => {
+      const selector = document.getElementById("language-selector");
+      const browserLanguage = (navigator.language || "en").slice(0, 2).toLowerCase();
+      const initialLanguage = ["en", "pt", "es"].includes(browserLanguage) ? browserLanguage : "en";
+      selector.value = initialLanguage;
+      applyLanguage(initialLanguage);
+    });
+  </script>
 </body>
 </html>
