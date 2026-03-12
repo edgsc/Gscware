@@ -51,14 +51,98 @@
             padding: 1rem 1.25rem 0;
         }
 
-        #language-selector {
+        .language-selector {
+            display: inline-flex;
+            gap: 0.35rem;
             border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 0.45rem 0.75rem;
-            font-size: 0.95rem;
-            color: var(--text);
+            border-radius: 999px;
+            padding: 0.25rem;
             background: #fff;
+        }
+
+        .lang-option {
+            border: 0;
+            border-radius: 999px;
+            background: transparent;
+            color: var(--text);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.32rem 0.58rem;
+            font-size: 0.9rem;
             cursor: pointer;
+        }
+
+        .lang-option:hover,
+        .lang-option:focus-visible {
+            background: #eef3ff;
+            outline: none;
+        }
+
+        .lang-option.active {
+            background: #2f6fed;
+            color: #ffffff;
+        }
+
+        .flag {
+            width: 18px;
+            height: 12px;
+            border-radius: 2px;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .flag-us {
+            background: repeating-linear-gradient(
+                to bottom,
+                #b22234 0,
+                #b22234 1px,
+                #ffffff 1px,
+                #ffffff 2px
+            );
+        }
+
+        .flag-us::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 7px;
+            height: 7px;
+            background: #3c3b6e;
+        }
+
+        .flag-br {
+            background: #009b3a;
+        }
+
+        .flag-br::before {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 1px;
+            width: 8px;
+            height: 8px;
+            background: #ffdf00;
+            transform: rotate(45deg);
+        }
+
+        .flag-br::after {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 3px;
+            width: 4px;
+            height: 4px;
+            background: #002776;
+            border-radius: 50%;
+        }
+
+        .flag-es {
+            background: linear-gradient(to bottom, #aa151b 0 25%, #f1bf00 25% 75%, #aa151b 75% 100%);
         }
 
         .hero {
@@ -133,6 +217,22 @@
             margin-bottom: 0.2rem;
         }
 
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .app-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            border: 1px solid #d7e2f9;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
         .app-description {
             color: var(--muted);
             font-size: 0.95rem;
@@ -176,11 +276,20 @@
     <div class="container">
         <header>
             <div class="top-bar">
-                <select id="language-selector" onchange="changeLanguage()" aria-label="Language selector">
-                    <option value="en" selected>English</option>
-                    <option value="pt">Português</option>
-                    <option value="es">Español</option>
-                </select>
+                <div class="language-selector" role="group" aria-label="Language selector">
+                    <button type="button" class="lang-option" data-lang="en" onclick="changeLanguage('en')">
+                        <span class="flag flag-us" aria-hidden="true"></span>
+                        <span>English</span>
+                    </button>
+                    <button type="button" class="lang-option" data-lang="pt" onclick="changeLanguage('pt')">
+                        <span class="flag flag-br" aria-hidden="true"></span>
+                        <span>Português</span>
+                    </button>
+                    <button type="button" class="lang-option" data-lang="es" onclick="changeLanguage('es')">
+                        <span class="flag flag-es" aria-hidden="true"></span>
+                        <span>Español</span>
+                    </button>
+                </div>
             </div>
             <div class="hero">
                 <h1 data-i18n="title">Gscware Privacy Policies</h1>
@@ -200,7 +309,10 @@
                 <p class="section-text" data-i18n="appsText">Select an application below to open its complete privacy policy.</p>
 
                 <a class="app-card" href="privacy_politics_calculator.html" aria-label="Open Calculator Popup privacy policy">
-                    <p class="app-title" data-i18n="calculatorTitle">Floating Calculator Popup Card</p>
+                    <div class="app-header">
+                        <img class="app-icon" src="AppIcons/floating_calculator.png" alt="Floating Calculator icon">
+                        <p class="app-title" data-i18n="calculatorTitle">Floating Calculator Popup Card</p>
+                    </div>
                     <p class="app-description" data-i18n="calculatorDescription">Floating calculator for Android with overlay functionality and quick access tools.</p>
                     <p class="app-link-label" data-i18n="openPolicy">Open privacy policy</p>
                 </a>
@@ -229,31 +341,31 @@
                 footer: "©2026 Gscware. All rights reserved."
             },
             pt: {
-                pageTitle: "Gscware - Politicas de Privacidade",
-                title: "Politicas de Privacidade da Gscware",
-                subtitle: "Acesse em um unico lugar as informacoes de privacidade dos aplicativos oficiais da Gscware.",
-                lastUpdated: "Ultima atualizacao: 11 de marco de 2026",
-                overviewHeading: "Visao geral",
-                overviewText: "Este portal oferece politicas de privacidade transparentes e faceis de ler para os produtos da Gscware. Cada politica descreve permissoes, armazenamento local e como as informacoes dos usuarios sao tratadas.",
+                pageTitle: "Gscware - Políticas de Privacidade",
+                title: "Políticas de Privacidade da Gscware",
+                subtitle: "Acesse, em um único lugar, as informações de privacidade dos aplicativos oficiais da Gscware.",
+                lastUpdated: "Última atualização: 11 de março de 2026",
+                overviewHeading: "Visão geral",
+                overviewText: "Este portal oferece políticas de privacidade transparentes e fáceis de ler para os produtos da Gscware. Cada política descreve permissões, armazenamento local e como as informações dos usuários são tratadas.",
                 appsHeading: "Aplicativos",
-                appsText: "Selecione um aplicativo abaixo para abrir sua politica de privacidade completa.",
+                appsText: "Selecione um aplicativo abaixo para abrir sua política de privacidade completa.",
                 calculatorTitle: "Calculadora Flutuante Popup Card",
-                calculatorDescription: "Calculadora flutuante para Android com funcionalidade de sobreposicao e acesso rapido.",
-                openPolicy: "Abrir politica de privacidade",
+                calculatorDescription: "Calculadora flutuante para Android com funcionalidade de sobreposição e acesso rápido.",
+                openPolicy: "Abrir política de privacidade",
                 footer: "©2026 Gscware. Todos os direitos reservados."
             },
             es: {
-                pageTitle: "Gscware - Politicas de Privacidad",
-                title: "Politicas de Privacidad de Gscware",
-                subtitle: "Accede en un solo lugar a la informacion de privacidad de todas las aplicaciones oficiales de Gscware.",
-                lastUpdated: "Ultima actualizacion: 11 de marzo de 2026",
+                pageTitle: "Gscware - Políticas de Privacidad",
+                title: "Políticas de Privacidad de Gscware",
+                subtitle: "Accede, en un solo lugar, a la información de privacidad de todas las aplicaciones oficiales de Gscware.",
+                lastUpdated: "Última actualización: 11 de marzo de 2026",
                 overviewHeading: "Resumen",
-                overviewText: "Este portal ofrece politicas de privacidad claras y faciles de leer para los productos de Gscware. Cada politica describe permisos, almacenamiento local y como se maneja la informacion del usuario.",
+                overviewText: "Este portal ofrece políticas de privacidad claras y fáciles de leer para los productos de Gscware. Cada política describe permisos, almacenamiento local y cómo se maneja la información del usuario.",
                 appsHeading: "Aplicaciones",
-                appsText: "Selecciona una aplicacion para abrir su politica de privacidad completa.",
+                appsText: "Selecciona una aplicación para abrir su política de privacidad completa.",
                 calculatorTitle: "Calculadora Flotante Popup Card",
-                calculatorDescription: "Calculadora flotante para Android con funcionalidad de superposicion y acceso rapido.",
-                openPolicy: "Abrir politica de privacidad",
+                calculatorDescription: "Calculadora flotante para Android con funcionalidad de superposición y acceso rápido.",
+                openPolicy: "Abrir política de privacidad",
                 footer: "©2026 Gscware. Todos los derechos reservados."
             }
         };
@@ -271,17 +383,23 @@
             });
         }
 
-        function changeLanguage() {
-            const selector = document.getElementById("language-selector");
-            applyLanguage(selector.value);
+        function setActiveLanguage(language) {
+            document.querySelectorAll(".lang-option").forEach((button) => {
+                const isActive = button.getAttribute("data-lang") === language;
+                button.classList.toggle("active", isActive);
+                button.setAttribute("aria-pressed", isActive ? "true" : "false");
+            });
+        }
+
+        function changeLanguage(language) {
+            applyLanguage(language);
+            setActiveLanguage(language);
         }
 
         window.addEventListener("DOMContentLoaded", () => {
-            const selector = document.getElementById("language-selector");
             const browserLanguage = (navigator.language || "en").slice(0, 2).toLowerCase();
             const initialLanguage = ["en", "pt", "es"].includes(browserLanguage) ? browserLanguage : "en";
-            selector.value = initialLanguage;
-            applyLanguage(initialLanguage);
+            changeLanguage(initialLanguage);
         });
     </script>
 </body>
